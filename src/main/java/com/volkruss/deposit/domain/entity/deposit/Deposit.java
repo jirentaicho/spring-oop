@@ -8,6 +8,4 @@ public interface Deposit {
 	
 	int getAmount();
 	
-	void setAmount(int amount);
-
 }

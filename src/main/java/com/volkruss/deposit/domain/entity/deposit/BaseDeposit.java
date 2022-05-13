@@ -1,12 +1,13 @@
 package com.volkruss.deposit.domain.entity.deposit;
 
 import com.volkruss.deposit.domain.entity.deposit.account.Account;
+import com.volkruss.deposit.domain.entity.deposit.account.Balance;
 
 public abstract class BaseDeposit implements Deposit{
 	
 	protected Account account;
 	
-	private int amount;
+	protected Balance balance;
 	
 	@Override
 	public final int getAccountNumber() {
@@ -20,11 +21,7 @@ public abstract class BaseDeposit implements Deposit{
 	
 	@Override
 	public int getAmount() {
-		return this.amount;
+		return this.balance.inquiry();
 	}
 
-	@Override
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
 }
