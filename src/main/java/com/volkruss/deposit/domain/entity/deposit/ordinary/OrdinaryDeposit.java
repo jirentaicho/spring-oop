@@ -3,13 +3,18 @@ package com.volkruss.deposit.domain.entity.deposit.ordinary;
 import java.time.LocalDate;
 
 import com.volkruss.deposit.domain.entity.deposit.BaseDeposit;
+import com.volkruss.deposit.domain.entity.deposit.account.Account;
 
 public final class OrdinaryDeposit extends BaseDeposit{
 	
 	private LocalDate withdrawDate;
-	
+		
 	// 補完項目
 	private int interest;
+	
+	public OrdinaryDeposit(String name,int number) {
+		this.account = new Account(number,name);
+	}
 	
 	public void setWithdrawDate(LocalDate withdrawDate) {
 		this.withdrawDate = LocalDate.of(

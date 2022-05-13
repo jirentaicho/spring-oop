@@ -1,36 +1,26 @@
 package com.volkruss.deposit.domain.entity.deposit;
 
+import com.volkruss.deposit.domain.entity.deposit.account.Account;
+
 public abstract class BaseDeposit implements Deposit{
 	
-	private int accountNumber;
-	
-	private String accountName;
+	protected Account account;
 	
 	private int amount;
 	
 	@Override
 	public final int getAccountNumber() {
-		return this.accountNumber;
+		return this.account.getNumber();
 	}
 			
 	@Override
 	public final String getAccountName() {
-		return this.accountName;
+		return this.account.getName();
 	}
 	
 	@Override
 	public int getAmount() {
 		return this.amount;
-	}
-
-	@Override
-	public void setAccountNumber(int number) {
-		this.accountNumber = number;
-	}
-
-	@Override
-	public void setAccountName(String name) {
-		this.accountName = name;
 	}
 
 	@Override
