@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import com.volkruss.deposit.domain.entity.deposit.BaseDeposit;
 import com.volkruss.deposit.domain.entity.deposit.account.Account;
+import com.volkruss.deposit.domain.entity.deposit.account.Balance;
 
 public final class OrdinaryDeposit extends BaseDeposit{
 	
@@ -12,8 +13,9 @@ public final class OrdinaryDeposit extends BaseDeposit{
 	// 補完項目
 	private int interest;
 	
-	public OrdinaryDeposit(String name,int number) {
+	public OrdinaryDeposit(String name,int number,int amt) {
 		this.account = new Account(number,name);
+		this.balance = new Balance(amt);
 	}
 	
 	public void setWithdrawDate(LocalDate withdrawDate) {

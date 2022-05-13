@@ -26,8 +26,7 @@ public class DormantRepositoryImpl implements DormantRepository{
 	@Override
 	public DormantDeposit findById(int id) {
 		DormantDsModel dsModel = this.database.get(id);
-		DormantDeposit deposit = new DormantDeposit(dsModel.accountName,dsModel.accountNumber);
-		deposit.setAmount(dsModel.amount);
+		DormantDeposit deposit = new DormantDeposit(dsModel.accountName,dsModel.accountNumber,dsModel.amount);
 		deposit.setDormantDate(
 				LocalDate.of(
 						dsModel.dormantDate.getYear(), 

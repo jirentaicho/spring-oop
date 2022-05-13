@@ -27,8 +27,7 @@ public class OrdinaryRepositoryImpl implements OrdinaryRepository{
 	public OrdinaryDeposit findById(int id) {
 		OrdinaryDsModel result = this.database.get(id);
 		// ここで返すのをEntityにしている
-		OrdinaryDeposit deposit = new OrdinaryDeposit(result.accountName,result.accountNumber);
-		deposit.setAmount(result.amount);
+		OrdinaryDeposit deposit = new OrdinaryDeposit(result.accountName,result.accountNumber,result.amount);
 		deposit.setWithdrawDate(result.withdrawDate);
 		return deposit;
 	}	
