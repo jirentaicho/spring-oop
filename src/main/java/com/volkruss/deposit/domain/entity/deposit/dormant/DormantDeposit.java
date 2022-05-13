@@ -3,6 +3,7 @@ package com.volkruss.deposit.domain.entity.deposit.dormant;
 import java.time.LocalDate;
 
 import com.volkruss.deposit.domain.entity.deposit.BaseDeposit;
+import com.volkruss.deposit.domain.entity.deposit.account.Account;
 
 public class DormantDeposit extends BaseDeposit{
 	
@@ -10,6 +11,10 @@ public class DormantDeposit extends BaseDeposit{
 	
 	//　補完項目
 	private boolean isNotice = false;
+	
+	public DormantDeposit(String name,int number) {
+		this.account = new Account(number,name);
+	}
 	
 	public void setDormantDate(LocalDate dormantDate) {
 		this.dormantDate = LocalDate.of(

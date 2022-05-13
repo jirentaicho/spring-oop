@@ -4,11 +4,7 @@ public interface Deposit {
 	
 	int getAccountNumber();
 	
-	void setAccountNumber(int number);
-	
 	String getAccountName();
-	
-	void setAccountName(String name);
 	
 	int getAmount();
 	
